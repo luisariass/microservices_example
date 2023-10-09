@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Listing</title>
+</head>
+<body>
+    <h1>Appointments</h1>
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                Name: {{ appointment.name }}<br>
+                Email: {{ appointment.email }}<br>
+                Date: {{ appointment.date }}<br>
+                Time: {{ appointment.time }}<br>
+                <a href="/delete/{{ appointment.id }}">Delete</a>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+    <div class="d-flex justify-content-center my-5">
+        <button type="button" class="btn btn-primary" onclick="redireccionar()">Volver a la página principal</button>
+    </div>
+    <script>
+        function redireccionar() {
+            window.location.href = '/'; // Cambia 'otro_archivo.html' por el nombre de tu otro archivo HTML
+        }
+    </script>
+</body>
+</html>
